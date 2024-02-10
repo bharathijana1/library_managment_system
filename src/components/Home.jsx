@@ -58,7 +58,8 @@ const currentData=reverseData.slice(firstIndex,lastIndex)
         <div className='d-flex p-0'>
           
             <SideBar />
-         
+            <div className='d-flex flex-column w-100'>
+            <Nav title="Library management system" />
          
             {loader ? (
               
@@ -66,9 +67,8 @@ const currentData=reverseData.slice(firstIndex,lastIndex)
                 <Loader type="TailSpin" color='black' width={50} height={50} />
               </div>
             ) : (
-              <div className='d-flex flex-column w-100'>
-                <Nav title="Library management system" />
-            <Link className='align-self-end mx-5 mb-4' to="/create"><Button variant='dark' className='btn-1'>Add new book++</Button></Link>
+             <>
+             <Link className='align-self-end mx-5 mb-4' to="/create"><Button variant='dark' className='btn-1'>Add new book++</Button></Link>
                 <div id='home' className='home d-flex  flex-wrap justify-content-center pt-3 gap-5'>
                   {currentData.map((book, i) => (
                     <Card key={i} style={{ width: '18rem', marginBottom: '10px' }}>
@@ -106,9 +106,12 @@ const currentData=reverseData.slice(firstIndex,lastIndex)
                     ))}
                   </div>
                 
-                </div>
-              </div>
+                </div></>
+                
+            
+             
             )}
+             </div>
           
         </div>
       </Container>

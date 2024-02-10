@@ -64,7 +64,7 @@ export const Author = () => {
                   <td className='p-3'>{item.author.name}</td>
                   <td className='p-3'>{item.author.nationality}</td>
                   <td className='p-3'>{item.author.birthYear}</td>
-                  <td className='p-3 w-50'>{item.author.biography}</td>    
+                  <td className='p-3 w-25'>{item.author.biography}</td>    
                   <td className='p-3 '><Link to={`/author/edit/${item.id}`}><Button variant='warning'>Edit</Button></Link></td>    
                 </tr>
               ))}
