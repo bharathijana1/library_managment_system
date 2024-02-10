@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Container, Row, Table } from 'react-bootstrap'
+import { Button, Col, Container, Row, Table } from 'react-bootstrap'
 import { SideBar } from './SideBar'
 import axios from 'axios';
 import { Nav } from './Nav';
 import Loader from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
 
 export const Author = () => {
   const [data, setData] = useState([]);
@@ -38,7 +39,7 @@ export const Author = () => {
                 <SideBar/>
             
             <div className='p-0 w-100'>
-            <Nav title="Books details" />
+            <Nav title="Author details" />
           {loader ?(
               <div className='vh-100 w-100 justify-content-center align-items-center d-flex'>
                 <Loader type="ThreeDots" color='black' width={50} height={50}/>
@@ -53,6 +54,7 @@ export const Author = () => {
                 <th className='p-4'>Nationality</th>
                 <th className='p-4'>Birth year</th>
                 <th className='p-4'>Biography</th>
+                <th className='p-4'>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -63,6 +65,7 @@ export const Author = () => {
                   <td className='p-3'>{item.author.nationality}</td>
                   <td className='p-3'>{item.author.birthYear}</td>
                   <td className='p-3 w-50'>{item.author.biography}</td>    
+                  <td className='p-3 '><Link to={`/author/edit/${item.id}`}><Button variant='warning'>Edit</Button></Link></td>    
                 </tr>
               ))}
             </tbody>

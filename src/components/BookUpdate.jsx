@@ -9,7 +9,7 @@ import { Nav } from "./Nav";
 import Loader from "react-loader-spinner";
 
 
-export const Update = () => {
+export const BookUpdate = () => {
     const navigate = useNavigate();
     const { id } = useParams(); 
     const [loader,setLoader]=useState(true)
@@ -28,9 +28,6 @@ export const Update = () => {
       title: "",
       author: {
         name: "",
-        birthYear: "",
-        nationality: "",
-        biography: "",
       },
       genre: "",
       publicationYear: "",
@@ -40,7 +37,7 @@ export const Update = () => {
     onSubmit: async (values) => {
       try {
         await axios.put(`https://formic.onrender.com/books/${id}`, values);
-        navigate('/');
+        navigate('/book');
       } catch (error) {
         console.error(error);
       }
@@ -64,7 +61,7 @@ export const Update = () => {
             <div className="d-flex">
                 <SideBar/>
                 <div className="p-0 w-100">
-                    <Nav title="Update book and author data"/>
+                    <Nav title="Update book data"/>
                     {loader ?(
                         <div className='vh-100 w-100 justify-content-center align-items-center d-flex'>
                           <Loader type="Plane" color="black" width={50} height={50}/>
@@ -93,39 +90,7 @@ export const Update = () => {
                         placeholder="Enter author name"
                       />
                       {errors.author && errors.author.name && touched.author && touched.author.name && (<p className="error">{errors.author.name}</p>)}      
-                      <label htmlFor="author.birthYear">BirthYear</label>
-                      <input
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        id="author.birthYear"
-                        value={values.author.birthYear}
-                        type="number"
-                        className={errors.author && errors.author.birthYear && touched.author && touched.author.birthYear ? "input-error" : ""}
-                        placeholder="Enter author name"
-                      />
-                      {errors.author && errors.author.birthYear && touched.author && touched.author.birthYear && (<p className="error">{errors.author.birthYear}</p>)}      
-                      <label htmlFor="author.nationality">Nationality</label>
-                      <input
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        id="author.nationality"
-                        value={values.author.nationality}
-                        type="text"
-                        className={errors.author && errors.author.nationality && touched.author && touched.author.nationality ? "input-error" : ""}
-                        placeholder="Enter author name"
-                      />
-                      {errors.author && errors.author.nationality && touched.author && touched.author.nationality && (<p className="error">{errors.author.nationality}</p>)}      
-                      <label htmlFor="author.biography">Biography</label>
-                      <input
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        id="author.biography"
-                        value={values.author.biography}
-                        type="text"
-                        className={errors.author && errors.author.biography && touched.author && touched.author.biography ? "input-error" : ""}
-                        placeholder="Enter author name"
-                      />
-                      {errors.author && errors.author.biography && touched.author && touched.author.biography && (<p className="error">{errors.author.biography}</p>)}    
+                     
                       <label htmlFor="genre">Genre</label>
                       <input
                         onChange={handleChange}
@@ -160,7 +125,7 @@ export const Update = () => {
                       />
                       {errors.isbn && touched.isbn && <p className="error">{errors.isbn}</p>}
   
-                    <Link to={'/'}><Button variant="danger" className="py-2 w-100 mt-2" >Cancel</Button></Link>
+                    <Link to={'/book'}><Button variant="danger" className="py-2 w-100 mt-2" >Cancel</Button></Link>
                     <Button type="submit" variant="dark" className="py-2 w-100 mt-2" disabled={isSubmitting}>Update</Button>
                   </form>
                     )}

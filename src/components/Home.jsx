@@ -12,7 +12,7 @@ import bookImg from '../assets/—Pngtree—vector open book icon_4102909.png';
 export const Home = () => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  const homeRef = useRef(null);
+ 
 
   useEffect(() => {
     // Fetch books data

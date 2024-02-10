@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Button,  Container,  Table } from 'react-bootstrap';
 import { SideBar } from './SideBar';
 import axios from 'axios';
 import { Nav } from './Nav';
 import Loader from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
 
 export const Book = () => {
   const [data, setData] = useState([]);
-
   const [loader,setLoader]=useState(true)
 
   useEffect(() => {
@@ -54,6 +54,7 @@ export const Book = () => {
                 <th className='p-4'>Author name</th>
                 <th className='p-4'>Publication Year</th>
                 <th className='p-4'>ISBN</th>
+                <th className='p-4'>Action</th>
                
               </tr>
             </thead>
@@ -66,6 +67,7 @@ export const Book = () => {
                   <td className='p-3'>{item.author.name}</td>
                   <td className='p-3'>{item.publicationYear}</td>
                   <td className='p-3'>{item.isbn}</td>
+                  <td className='p-3'><Link to={`/book/edit/${item.id}`}><Button variant='warning'>Edit</Button></Link></td>
                 </tr>
               ))}
             </tbody>
