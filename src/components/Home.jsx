@@ -67,7 +67,7 @@ const currentData=reverseData.slice(firstIndex,lastIndex)
               </div>
             ) : (
               <div className='d-flex flex-column w-100'>
-                <Nav title="Library books management system" />
+                <Nav title="Library management system" />
             <Link className='align-self-end mx-5 mb-4' to="/create"><Button variant='dark' className='btn-1'>Add new book++</Button></Link>
                 <div id='home' className='home d-flex  flex-wrap justify-content-center pt-3 gap-5'>
                   {currentData.map((book, i) => (
