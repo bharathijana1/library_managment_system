@@ -117,3 +117,15 @@ li{
   left: 15%;
   opacity: 0.2;
 }
+
+.close-btn{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* @media  (max-width: 1200px) {
+  .closed-btn-min{
+    display: none;
+  }
+} */

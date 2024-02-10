@@ -25,18 +25,19 @@ export const Book = () => {
   const lastIndex=currentPage * itemsPerPage;
   const firstIndex=lastIndex - itemsPerPage
 
-  const currentData=data.slice(firstIndex,lastIndex)
+  const reverseData=[...data].reverse()
+  const currentData=reverseData.slice(firstIndex,lastIndex)
 
   const paginate=(id)=>{
     setCurrentPage(id)
   }
   return (
     <Container fluid className='p-0'>
-      <Row>
-        <Col xs={2} md={2} lg={2} className='p-0'>
+      <div className='d-flex p-0'>
+        
           <SideBar />
-        </Col>
-        <Col className='p-0'>
+        
+        <div className='p-0 w-100'>
           <Nav title="Books details" />
           {loader ?(
             <div className='vh-100 w-100 justify-content-center align-items-center d-flex'>
@@ -70,10 +71,7 @@ export const Book = () => {
             </tbody>
             
           </Table>
-          
-            </div>
-          )}
-            <div className='container d-flex justify-content-center'>
+          <div className='container d-flex justify-content-center'>
                     {Array.from({ length: Math.ceil(data.length / itemsPerPage) }, (_, i) => (
                       <div key={i}>
                         <button className='btn btn-dark mx-2' onClick={() => paginate(i+1)}>
@@ -82,8 +80,11 @@ export const Book = () => {
                       </div>
                     ))}
              </div>
-        </Col>
-      </Row>
+            </div>
+          )}
+            
+        </div>
+      </div>
     </Container>
   );
 };

@@ -61,11 +61,9 @@ export const Update = () => {
   console.log(values.isbn);
     return (
         <Container fluid className="p-0">
-            <Row>
-                <Col xs={2} md={2} lg={2} className="p-0">
-                    <SideBar/>
-                </Col>
-                <Col>
+            <div className="d-flex">
+                <SideBar/>
+                <div className="p-0 w-100">
                     <Nav title="Update book and author data"/>
                     {loader ?(
                         <div className='vh-100 w-100 justify-content-center align-items-center d-flex'>
@@ -166,8 +164,8 @@ export const Update = () => {
                     <Button type="submit" variant="dark" className="py-2 w-100 mt-2" disabled={isSubmitting}>Update</Button>
                   </form>
                     )}
-                </Col>
-            </Row>
+                </div>
+            </div>
         </Container>
     );
   };

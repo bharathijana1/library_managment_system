@@ -48,26 +48,29 @@ const paginate = (i) => {
 
   
 
-  const currentProducts = data.slice(firstIndex, lastIndex);
+ 
+const reverseData=[...data].reverse()
+const currentData=reverseData.slice(firstIndex,lastIndex)
 
   return (
     <>
       <Container fluid className='p-0 m-0'>
-        <Row>
-          <Col xs={2} md={2} lg={2} className='p-0'>
+        <div className='d-flex p-0'>
+          
             <SideBar />
-          </Col>
-          <Col className='p-0'>
-            <Nav title="Library books management system" />
-            <Link className='align-self-end mx-5 mt-3' to="/create"><Button variant='dark' className='btn-1'>Add new book++</Button></Link>
+         
+         
             {loader ? (
+              
               <div className='vh-100 w-100 justify-content-center align-items-center d-flex'>
                 <Loader type="TailSpin" color='black' width={50} height={50} />
               </div>
             ) : (
-              <div className='d-flex flex-column'>
-                <div id='home' className='home d-flex flex-wrap justify-content-center pt-3 gap-5'>
-                  {currentProducts.map((book, i) => (
+              <div className='d-flex flex-column w-100'>
+                <Nav title="Library books management system" />
+            <Link className='align-self-end mx-5 mb-4' to="/create"><Button variant='dark' className='btn-1'>Add new book++</Button></Link>
+                <div id='home' className='home d-flex  flex-wrap justify-content-center pt-3 gap-5'>
+                  {currentData.map((book, i) => (
                     <Card key={i} style={{ width: '18rem', marginBottom: '10px' }}>
                       <Card.Body>
                         <Card.Title className='text-bg-dark p-2 text-center rounded'>{book.title}</Card.Title>
@@ -106,8 +109,8 @@ const paginate = (i) => {
                 </div>
               </div>
             )}
-          </Col>
-        </Row>
+          
+        </div>
       </Container>
     </>
   );

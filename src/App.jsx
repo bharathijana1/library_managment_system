@@ -9,7 +9,7 @@ import { Author } from './components/Author'
 
 const App = () => {
   return (
-      <Container fluid>
+      <Container fluid className='p-0'>
             <BrowserRouter>
               <Routes>
                 <Route path='/' element={<Home/>}/>

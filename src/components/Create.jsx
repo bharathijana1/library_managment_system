@@ -45,11 +45,11 @@ const Create = () => {
 
   return (
     <Container fluid className="p-0">
-      <Row>
-        <Col xs={2} md={2} lg={2} className='p-0'>
+      <div className="d-flex">
+        
             <SideBar/>
-        </Col>
-        <Col  className='p-0'>
+        
+        <div  className='p-0 w-100'>
           <Nav title="Create book and author data"/>
         <form autoComplete="off" className="w-50" onSubmit={handleSubmit}>
       <label htmlFor="title">Title</label>
@@ -143,8 +143,8 @@ const Create = () => {
       <Link to={'/'}><Button className="w-100 mt-2 py-2"  variant="danger">Cancel</Button></Link>
       <Button type="submit" variant="dark" className="py-2 w-100 mt-2" disabled={isSubmitting}>Submit</Button>
     </form>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </Container>
   );
 };
