@@ -65,7 +65,7 @@ export const AuthorUpdate = () => {
                     <Nav title="Update author data"/>
                     {loader ?(
                         <div className='vh-100 w-100 justify-content-center align-items-center d-flex'>
-                          <Loader type="Plane" color="black" width={50} height={50}/>
+                          <Loader type="Plane" color="black" width={40} height={40}/>
                         </div>
                     ):(
                       <form autoComplete="off" className="w-50" onSubmit={handleSubmit}>

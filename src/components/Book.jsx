@@ -41,7 +41,7 @@ export const Book = () => {
           <Nav title="Books details" />
           {loader ?(
             <div className='vh-100 w-100 justify-content-center align-items-center d-flex'>
-              <Loader type="BallTriangle" color='black' width={50} height={50}/>
+               <h5>Just a moment</h5>   <Loader type="ThreeDots" className='px-2' color='black' width={50} height={50}/>
             </div>
           ):(
             <div className='home'>
