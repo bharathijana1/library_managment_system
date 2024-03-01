@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom'; // Importing useNavigate
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
+import { Button } from 'react-bootstrap';
 
 export const SideBar = () => {
     const [closedIcon, setClosedIcon] = useState(false);
@@ -39,8 +40,10 @@ export const SideBar = () => {
     }, []);
       
     const onClickLogout = () => {
-        Cookies.remove('jwt_token');
-        navigate('/login'); // using navigate to redirect to login page
+        if (window.confirm("are you want to log-out")) {
+            Cookies.remove('jwt_token');
+            navigate('/login'); // using navigate to redirect to login page
+        }
     };
       
     return (
@@ -58,7 +61,7 @@ export const SideBar = () => {
                             </button>
                         </div>
                     </div>
-                    <ul className='list-unstyled p-4'>
+                    <ul className='list-unstyled p-4 '>
                         <li >
                             <NavLink to='/' style={navLinkActive}>
                                 Home
@@ -75,13 +78,14 @@ export const SideBar = () => {
                             </NavLink>
                         </li>
                     </ul>
-                    <button
+                    <Button
                         type="button"
-                        className="logout-desktop-btn"
+                        className="logout-desktop-btn btn-secontary"
                         onClick={onClickLogout}
+                        variant='secondary'
                     >
                         Logout
-                    </button>
+                    </Button>
                 </div>
             ) : (
                 <div className='close-btn p-3 '>

@@ -124,14 +124,11 @@ li{
   left: 0;
 }
 
-/* @media  (max-width: 1200px) {
-  .closed-btn-min{
-    display: none;
-  }
-} */
-
-
-/* login-form */
+.logout-desktop-btn{
+  position: absolute;
+  bottom: 40px;
+  left: 200px;
+}
 
 .login-form-container {
   display: flex;
