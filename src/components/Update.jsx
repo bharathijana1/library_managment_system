@@ -160,7 +160,7 @@ export const Update = () => {
                       />
                       {errors.isbn && touched.isbn && <p className="error">{errors.isbn}</p>}
   
-                    <Link to={'/'}><Button variant="danger" className="py-2 w-100 mt-2" >Cancel</Button></Link>
+                    <Link to={'/'}><Button variant="" className="py-2 w-100 mt-2" style={{backgroundColor:"maroon", color:"white"}} >Cancel</Button></Link>
                     <Button type="submit" variant="dark" className="py-2 w-100 mt-2" disabled={isSubmitting}>Update</Button>
                   </form>
                     )}

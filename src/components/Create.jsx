@@ -140,8 +140,12 @@ const Create = () => {
         placeholder="Enter your isbn"
       />
       {errors.isbn && touched.isbn && <p className="error">{errors.isbn}</p>}
-      <Link to={'/'}><Button className="w-100 mt-2 py-2"  variant="danger">Cancel</Button></Link>
-      <Button type="submit" variant="dark" className="py-2 w-100 mt-2" disabled={isSubmitting}>Submit</Button>
+      
+      <Link to={'/'}><Button className="py-2 w-100 mt-4"  variant="" style={{backgroundColor:"maroon", color:"white"}}>Cancel</Button></Link>
+      <Button type="submit" variant="dark" className="py-2 w-100 mt-4 " disabled={isSubmitting}>Submit</Button>
+
+
+      
     </form>
         </div>
       </div>

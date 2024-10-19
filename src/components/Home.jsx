@@ -9,6 +9,11 @@ import { SideBar } from './SideBar';
 import { Nav } from './Nav';
 import bookImg from '../assets/—Pngtree—vector open book icon_4102909.png';
 
+var bgColors = { 
+  "red": "#3D0202",
+  
+};
+
 export const Home = () => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -68,8 +73,8 @@ const currentData=reverseData.slice(firstIndex,lastIndex)
               </div>
             ) : (
              <>
-             <Link className='align-self-end mx-5 mb-4' to="/create"><Button variant='dark' className='btn-1'>Add new book++</Button></Link>
-                <div id='home' className='home d-flex  flex-wrap justify-content-center pt-3 gap-5'>
+             <Link className='align-self-end mx-5 mb-4' to="/create"><Button variant='' className='btn-1 mt-3'style={{backgroundColor:"maroon",color:"white",fontSize:"18px"}}>Add new book++</Button></Link>
+                <div id='home' className='home d-flex  flex-wrap justify-content-center pt-5 gap-5'>
                   {currentData.map((book, i) => (
                     <Card key={i} style={{ width: '18rem', marginBottom: '10px' }}>
                       <Card.Body>
@@ -89,9 +94,9 @@ const currentData=reverseData.slice(firstIndex,lastIndex)
                           <strong>Author Biography:</strong> {book.author.biography}
                         </Card.Text>
                       </Card.Body>
-                      <div className='d-flex align-self-end p-2 '>
-                        <Link to={`update/${book.id}`}><Button variant='warning' className='mx-3'>Edit</Button></Link>
-                        <Button variant='danger' onClick={(event) => handleDelete(book.id)}>Delete</Button>
+                      <div className='d-flex align-self-center p-2 '>
+                        <Link to={`update/${book.id}`}><Button variant='' className='mx-3 ' style= {{backgroundColor:'Goldenrod', color: 'white', fontSize:"18px"}}>Edit</Button></Link>
+                        <Button variant='' onClick={(event) => handleDelete(book.id)} style={{ backgroundColor: 'maroon', color: 'white',fontSize:"18px" }} >Delete</Button>
                       </div>
                       <img className='book-img' src={bookImg} alt="book" />
                     </Card>

@@ -3,8 +3,8 @@ import Cookies from 'js-cookie';
 import { useNavigate, useLocation } from 'react-router-dom';
 import libImg from '../assets/undraw_Notebook_re_id0r.png';
 const LoginForm = () => {
-  const [username, setUsername] = useState('pavithra'); // Set default username
-  const [password, setPassword] = useState('pavi@1234'); // Set default password
+  const [username, setUsername] = useState('Bharathi'); // Set default username
+  const [password, setPassword] = useState('bharathi@1234'); // Set default password
   const [showSubmitError, setShowSubmitError] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ const LoginForm = () => {
     event.preventDefault();
     const userDetails = { username, password };
    
-    if (username === 'pavithra' && password === 'pavi@1234') {
+    if (username === 'Bharathi' && password === 'bharathi@1234') {
       onSubmitSuccess('mockJwtToken'); 
     } else {
       onSubmitFailure('Invalid username or password');
